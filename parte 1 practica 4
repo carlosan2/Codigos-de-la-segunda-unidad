@@ -1,0 +1,102 @@
+/* 
+	Fundación Kinal
+    Centro educativo Técncico Laboral Kinal
+    Quinto Perito
+    Quinto Electrónica 
+    Codigo Técnico: EB5AM
+    Curso: Taller de Electrónica Digital y reparación de computadoras
+    Proyecto: Catálogo de productos
+    Dev: Carlos Mayorga 2020404
+    Fecha: 25 de abril de 2024
+    */
+int SW1 = 10;
+int SW2 = 9;
+int SW3 = 8;
+int x = 0;
+
+void setup()
+{
+
+  
+pinMode (SW1, INPUT);
+pinMode (SW2, INPUT);
+pinMode (SW3, INPUT);
+Serial.begin(9600);
+Serial.println("Inicio");
+
+}
+
+void loop()
+{
+  
+  if(digitalRead(SW1) == HIGH&&x<=9){
+    if(digitalRead(SW2) == LOW){
+      if(digitalRead(SW3) == LOW){
+    Serial.println(x) ;
+    x = x+1;
+  	delay(1000);
+  if(x >= 10){
+    Serial.println("RECET");
+    x=0;
+  }
+      }
+    }
+ 
+ }
+   if(digitalRead(SW2) == HIGH&&x<=9){
+     if(digitalRead(SW1) == LOW){
+       if(digitalRead(SW3) == LOW){
+    Serial.println(x) ;
+    x = x+1;
+  	delay(2000);
+  if(x >= 10){
+    Serial.println("RECET");
+    x=0;
+  }
+       }
+          }
+     
+ }
+  if(digitalRead(SW3) == HIGH&&x<=9){
+    if(digitalRead(SW1) == LOW){
+      if(digitalRead(SW2) == LOW){
+    Serial.println(x) ;
+    x = x+1;
+  	delay(3000);
+  if(x >= 10){
+    Serial.println("RECET");
+    x=0;
+  }
+      }
+    }
+     
+ }
+  if(digitalRead(SW1) == LOW){
+    if(digitalRead(SW2) == LOW){
+      if(digitalRead (SW3) == LOW){
+    Serial.println(x) ;
+    x = x+1;
+    delay(500);
+      if(x >=10){
+      Serial.println("RECET");
+      x=0;
+      }
+     }
+    }
+   }
+   if(digitalRead(SW1) == HIGH){
+    if(digitalRead(SW2) == HIGH){
+      if(digitalRead (SW3) == HIGH){
+    Serial.println(x) ;
+    x = x+1;
+    delay(500);
+      if(x >=10){
+      Serial.println("RECET");
+      x=0;
+      }
+     }
+    }
+   }
+}
+
+
